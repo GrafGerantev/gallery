@@ -1,0 +1,121 @@
+.gallery
+	&__inner
+		padding-top: 20px
+		display: grid
+		margin: 0 auto
+		grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)) 
+		grid-template-rows: repeat(3, minmax(210px auto))
+		gap: 10px
+		grid-auto-rows: 210px
+		justify-content: space-between
+		position: relative
+		min-height: 100px
+
+
+	&-item
+		overflow: hidden
+		width: 100%
+
+		&__img
+			display: block
+			width: 100%
+			height: 100%
+			object-fit: cover
+			margin: 0 auto
+
+		&__placeholder
+			display: block
+			width: 100%
+			height: 100%
+			object-fit: cover
+			margin: 0 auto
+
+	&-form
+		padding-top: 60px
+		&.bordercolor
+			border: 1px solid blue
+
+
+.form
+	&__inner
+	&__input
+		display: block
+		width: 70%
+		border: 2px solid #c4c4c4
+		padding: 15px;
+		outline: none
+		margin: 0 auto
+	&__btn
+		width: 35%;
+		border: none
+		border-radius: 3px;
+		transition: all .3s linear;
+		background-color: #c4c4c4;
+		color: #fff
+		padding: 10px 25px
+		margin-bottom: 16px
+	&-error 
+		color: red
+		padding-top: 10px
+
+.buttons
+	margin-top: 16px
+	text-align: center
+
+.active
+	border: 2px solid blue
+
+#load-elem
+	display: none
+
+.spiner 
+	display: block;
+	position: absolute;
+	left: 40%;
+
+
+	width: 100px;
+	height: 100px;
+	margin: 30px auto;
+	border-radius: 50%;
+	border: 3px solid transparent;
+	border-top-color: #337AB7;
+	animation: preloader-5-spin 2s linear infinite;
+
+.spiner:before 
+	content: "";
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	right: 5px;
+	bottom: 5px;
+	border-radius: 50%;
+	border: 3px solid transparent;
+	border-top-color: #BFE2FF;
+	animation: preloader-5-spin 3s linear infinite;
+
+.spiner:after 
+	content: "";
+	position: absolute;
+	top: 15px;
+	left: 15px;
+	right: 15px;
+	bottom: 15px;
+	border-radius: 50%;
+	border: 3px solid transparent;
+	border-top-color: #337AB7;
+	animation: preloader-5-spin 1.5s linear infinite;
+
+@keyframes preloader-5-spin 
+	0%	 
+		transform: rotate(0deg);
+    
+	100% 
+		transform: rotate(360deg);
+
+@media ( max-width:	628px)
+	.form__input
+		width: 90%
+	.form__btn
+		width: 90%
+		
