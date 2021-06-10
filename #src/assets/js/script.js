@@ -27,16 +27,15 @@ function showGallery() {
 					const galleryItem = document.createElement('div');
 					const galleryImg = document.createElement('img');
 					const galleryPlace = document.createElement('img');
-
 					galleryItem.classList.add('gallery-item');
 					galleryPlace.classList.add('gallery-item__placeholder');
 					galleryPlace.src = "http://placehold.it/180x135/2ecc71/ecf0f1";
 					galleryPlace.onload = () => {
 						spiner.style.display = 'none';
 					}
-
 					//console.log(json[key][elem]);
 					//console.log(json[key][elem].url);
+
 					galleryItem.appendChild(galleryPlace);
 					galleryImg.classList.add('gallery-item__img');
 					galleryItem.appendChild(galleryImg);
@@ -55,6 +54,7 @@ function showGallery() {
 		});
 
 }
+
 
 function localGet() {
 	local = localStorage.getItem('arr');
@@ -103,11 +103,8 @@ function addImg() {
 			input.value = '';
 		}
 		galleryImg.onerror = function () {
-			galleryImg.src = "http://placehold.it/180x135/2ecc71/ecf0f1";
-			galleryItem.classList.add('gallery-item');
-			galleryImg.classList.add('gallery-item__img');
-			galleryItem.appendChild(galleryImg);
-			galleryInner.appendChild(galleryItem);
+			const formError = document.querySelector('.form-error');
+			formError.innerHTML = 'Вставьте корректную ссылку на изображение!';
 
 		}
 

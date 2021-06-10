@@ -57,6 +57,7 @@ let {
 	fonter = require("gulp-fonter"),
 	concat = require('gulp-concat'),
 	rigger = require('gulp-rigger'),
+	/* babel = require('gulp-babel'), */
 	sourcemaps = require('gulp-sourcemaps');
 
 function browserSync(params) {
@@ -128,6 +129,9 @@ function js() {
 	return src(path.src.js)
 		.pipe(rigger())
 		.pipe(sourcemaps.init())
+		/* 		.pipe(babel({
+					presets: ["@babel/preset-env"]
+				})) */
 		.pipe(dest(path.build.js))
 		.pipe(
 			uglify()
